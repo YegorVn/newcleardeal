@@ -1,0 +1,29 @@
+.btn{
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.5s;
+    border-radius: var(--r-60);
+    border: 0.188rem solid var(--blue);
+    font-weight: var(--bold);
+    font-size: inherit;
+}
+
+.btn_blue{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.btn_white{
+    background-color: transparent;
+    color: var(--blue);
+}
+
+.btn_blue:hover{
+    background-color: transparent;
+    color: var(--blue);
+}
+
+.btn_white:hover{
+    background-color: var(--blue);
+    color: var(--white);
+}

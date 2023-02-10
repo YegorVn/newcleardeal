@@ -1,0 +1,176 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import "./variables.css";
+@import "./animations.css";
+
+@import "./sections/banner.css";
+@import "./sections/cards.css";
+@import "./sections/dialog.css";
+@import "./sections/tabs.css";
+@import "./sections/footer.css";
+@import "./sections/header.css";
+@import "./sections/phone-form.css";
+@import "./sections/points.css";
+@import "./sections/slider.css";
+@import "./sections/switcher.css";
+@import "./sections/tickets.css";
+@import "./sections/feedback.css";
+@import "./sections/main.css";
+@import "./sections/cookie.css";
+@import "./sections/modal.css";
+
+@import "./ui-pieces/btn.css";
+@import "./ui-pieces/bubble.css";
+@import "./ui-pieces/input.css";
+@import "./ui-pieces/pat.css";
+@import "./ui-pieces/phone.css";
+@import "./ui-pieces/num.css";
+@import "./ui-pieces/select.css";
+@import "./ui-pieces/swipe.css";
+@import "./ui-pieces/switch.css";
+@import "./ui-pieces/burger.css";
+@import "./ui-pieces/underline.css";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--light-grey);
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  font-weight: 500;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+main {
+  margin: 6.6875rem auto 0 auto;
+  padding: 0 calc(calc(100vw - 81.25rem) / 2);
+  /* width: 81.25rem; */
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  font-size: var(--text-xxxxl);
+  margin: 0;
+}
+
+.dialog {
+  margin: 14rem 0 0 0;
+}
+
+.h-1 {
+  margin: 9rem 0 0 0;
+  padding: 7rem 0 3rem 0;
+}
+
+.h-2 {
+  margin: 9rem 0 0 0;
+  padding: 7rem 0 7rem 0;
+}
+
+.h-3 {
+  margin: 9rem 0 0 0;
+  padding: 7rem 0 3rem 0;
+}
+
+.h-4 {
+  margin: 9rem 0 5rem 0;
+  padding: 7rem 0 3rem 0;
+}
+
+.h-5 {
+  margin: 25rem 0 12rem 0;
+  padding: 0 0 0 0;
+}
+
+.h-6 {
+  margin: 9rem 0 0 0;
+  padding: 7rem 0 3rem 0;
+}
+
+
+@media screen and (min-width: 576px) and (max-width: 1550px) {
+  html {
+    font-size: 0.9vw;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .d-sm-block{
+    display: block;
+  }
+
+  .d-sm-none{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  html {
+    font-size: 3.33vw;
+  }
+
+  .dialog {
+    margin: 7rem 0 0 0;
+  }
+
+  main {
+    margin: 4.375rem auto 0 auto;
+    padding: 0 calc(calc(100vw - 23.75rem) / 2);
+    /* width: 23.75rem; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .h-1 {
+    margin: 4.5rem 0 0 0;
+    padding: 6rem 0 2rem 0;
+    font-size: var(--text-xxl);
+  }
+
+  .h-2 {
+    margin: 4.75rem 0 0 0;
+    padding: 5.75rem 0 3.75rem 0;
+    font-size: var(--text-xxl);
+  }
+
+  .h-3 {
+    margin: 4.75rem 0 0 0;
+    padding: 5.75rem 0 3.75rem 0;
+    font-size: var(--text-xxl);
+  }
+
+  .h-4 {
+    margin: 5.2rem 0 0 0;
+    padding: 5.3rem 0 5.3rem 0;
+    font-size: var(--text-xxl);
+  }
+
+  .h-5 {
+    margin: 3.625rem 0 0 0;
+    padding: 6.875rem 0 6.875rem 0;
+    font-size: var(--text-xl);
+  }
+
+  .h-6 {
+    margin: 4.9rem 0 0 0;
+    padding: 5.6rem 0 3.6rem 0;
+    font-size: var(--text-xl);
+    white-space: nowrap;
+  }
+
+  .d-block{
+    display: block;
+  }
+
+  .d-none{
+    display: none;
+  }
+}

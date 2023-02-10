@@ -1,0 +1,33 @@
+:root{
+    --blue: #577BFA;
+    --light-blue: #849FFF;
+    --turq: #A4DBF8;
+    --black: #303436;
+    --grey: #D8E2E7;
+    --red: #F53F4A;
+    --green: #48C95F;
+    --white: #FAFAFB;
+    --light-grey: #E5EBEE;
+    --bolder: 700;
+    --bold: 600;
+    --thin: 500;
+    --thiner: 400;
+    --text-xxxxl: 3.65rem;
+    --text-xxxl: 2.5rem;
+    --text-xxl: 2.375rem;
+    --text-xl: 2.25rem;
+    --text-l: 2rem;
+    --text-m: 1.5rem;
+    --text-s: 1.375rem;
+    --text-xs: 1.25rem;
+    --text-xxs: 1.125rem;
+    --text-xxxs: 1rem;
+    --text-xxxxs: 0.875rem;
+    --text-xxxxxs: 0.75rem;
+    --text-xxxxxxs: 0.625rem;
+    --r-60: 3.75rem;
+    --r-40: 2.5rem;
+    --r-30: 1.875rem;
+    --r-25: 1.5625rem;
+    --r-20: 1.25rem;
+}

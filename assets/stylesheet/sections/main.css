@@ -1,0 +1,87 @@
+.main__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.grbg{
+    position: absolute;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.grbg_banner_first{
+    width: 62rem;
+    height: 62rem;
+    top: 5.5rem;
+    left: -5.75rem;
+    background: radial-gradient(50% 50% at 50% 50%, #97CBF8 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.grbg_banner_second{
+    width: 120rem;
+    height: 120rem;
+    top: -26rem;
+    left: 60rem;
+    background: radial-gradient(50% 50% at 50% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.grbg_cards_first{
+    width: 65rem;
+    height: 65rem;
+    top: 162rem;
+    left: -7rem;
+    background: radial-gradient(50% 50% at 50% 50%, #A3CFF4 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.grbg_cards_second{
+    width: 72rem;
+    height: 72rem;
+    top: 156rem;
+    left: 57rem;
+    background: radial-gradient(50% 50% at 50% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.grbg_slider{
+    width: 65rem;
+    height: 65rem;
+    top: 219rem;
+    left: -2rem;
+    background: radial-gradient(50% 50% at 37.3% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 69.79%);
+}
+
+.grbg_points{
+    width: 130rem;
+    height: 130rem;
+    top: 296rem;
+    left: 73rem;
+    background: radial-gradient(50% 50% at 50% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 100%);
+}
+
+.grbg_tickets{
+    width: 94rem;
+    height: 94rem;
+    top: 400rem;
+    left: 53rem;
+    background: radial-gradient(50% 50% at 37.3% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 76.04%);
+}
+
+.grbg_feedback_first{
+    width: 120rem;
+    height: 120rem;
+    top: 440rem;
+    left: -48rem;
+    background: radial-gradient(50% 50% at 37.3% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 87.5%);
+}
+
+.grbg_feedback_second{
+    width: 86rem;
+    height: 86rem;
+    top: 467rem;
+    left: 55rem;
+    background: radial-gradient(50% 50% at 50% 50%, #A3CFF4 0%, rgba(217, 217, 217, 0) 100%);
+}

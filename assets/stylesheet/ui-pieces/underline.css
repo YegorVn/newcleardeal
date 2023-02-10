@@ -1,0 +1,27 @@
+.ul {
+  position: absolute;
+  width: 100%;
+  stroke-dasharray: 0 140%;
+  opacity: 0;
+}
+
+.ul_draw {
+  animation-name: drawUl;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.ul_undraw {
+  animation-name: unDrawUl;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.inline{
+  display: inline-block;
+  position: relative;
+}
+
+.inline__ul{
+  left: 0;
+}

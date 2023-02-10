@@ -1,0 +1,60 @@
+.phone-form{
+    width: 100%;
+    position: relative;
+    padding: 2.5rem 4.2rem;
+    display: flex;
+    font-size: var(--text-m);
+    margin-block-end: 0;
+}
+
+.phone-form_main{
+    margin-top: 8.5rem;
+}
+
+.phone-form__input{
+    width: 26rem;
+}
+
+.phone-form__btn{
+    margin: 0 0 0 auto;
+}
+
+.phone-form__bg{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    opacity: 0.5;
+    border-radius: var(--r-30);
+}
+
+@media screen and (max-width: 576px) {
+    .phone-form{
+        width: 100%;
+        position: relative;
+        padding: 2.5rem 1.25rem;
+        display: flex;
+        font-size: var(--text-xxs);
+        width: 24rem;
+    }
+
+    .phone-form{
+        flex-flow: column;
+    }
+
+    .phone-form__btn{
+        margin: 1.5rem 0 0 0;
+    }
+
+    .phone-form__input{
+        width: unset;
+    }
+
+    .phone-form_main{
+        margin-top: 3rem;
+    }
+}
+

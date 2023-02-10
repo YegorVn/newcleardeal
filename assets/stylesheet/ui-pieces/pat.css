@@ -1,0 +1,62 @@
+.pat {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.pat__border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/border.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.pat__border_active {
+  animation-name: rotateForward;
+}
+
+.pat__border_inactive {
+  animation-name: rotateBack;
+}
+
+.pat__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: 50%;
+}
+
+.pat__icon_open {
+  background-repeat: no-repeat;
+  background-image: url("../../images/arrowDown.svg");
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.pat__icon_open_active {
+  animation-name: rotateForwardReversed;
+}
+
+.pat__icon_open_inactive {
+  animation-name: rotateBackReversed;
+}
+
+.pat__icon_close {
+}
+
+@media screen and (max-width: 576px) {
+  .pat{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

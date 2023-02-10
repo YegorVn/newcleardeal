@@ -1,0 +1,160 @@
+footer {
+  display: flex;
+  color: var(--white);
+  height: 36.25rem;
+  background-color: var(--blue);
+}
+
+.footer__content {
+  width: 81.25rem;
+  margin: 12.75rem auto 0 auto;
+}
+
+.footer__flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__stick {
+  width: 1px;
+  background-color: var(--white);
+  height: 2.5em;
+}
+
+.footer__divider {
+  width: 100%;
+  background-color: var(--white);
+  height: 1px;
+  display: none;
+}
+
+/* top-section */
+.footer__top-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer__socmedia {
+  width: 13.25rem;
+  margin-left: 2.75rem;
+}
+
+.footer__contacts {
+  width: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.footer__mail {
+  font-size: var(--text-xs);
+}
+
+.footer__phone {
+  font-size: var(--text-l);
+}
+
+/* bot-section */
+.footer__bot-section {
+  margin-top: 3.5rem;
+  display: flex;
+  width: 100%;
+}
+
+.footer__text {
+  font-size: var(--text-xxs);
+}
+
+.footer__links {
+  width: 41.75rem;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer__divided {
+  width: 24rem;
+}
+
+.footer__legal {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    display: flex;
+    color: var(--white);
+    background-color: var(--blue);
+    height: 34rem;
+  }
+
+  .footer__content {
+    width: 26.25rem;
+    margin-top: 6.875rem;
+  }
+
+  .footer__divider {
+    display: block;
+  }
+
+  /* top-section */
+  .footer__top-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  .footer__logo {
+    order: -1;
+  }
+
+  .footer__socmedia {
+    margin-top: 2.5rem;
+    order: 2;
+    width: 50%;
+    margin-left: 0;
+  }
+
+  .footer__contacts {
+    order: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+    margin-left: 0;
+    margin-top: 2.5rem;
+    height: 5.75rem;
+  }
+
+  .footer__mail {
+    font-size: 1.75rem;
+  }
+
+  .footer__phone {
+    font-size: 1.75rem;
+  }
+
+  /* bot-section */
+  .footer__text {
+    font-size: var(--text-xxxs);
+  }
+
+  .footer__links{
+    width: 100%;
+  }
+
+  .footer__divided{
+    width: fit-content;
+  }
+
+  .footer__legal, .footer__stick, .footer__time{
+    display: none;
+  }
+}

@@ -1,0 +1,29 @@
+.num {
+  width: 8.75rem;
+  height: 8.75rem;
+  min-width: 8.75rem;
+  min-height: 8.75rem;
+  border: 0.313rem solid var(--blue);
+  font-size: 3.5rem !important;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--blue);
+}
+
+.num_in_view{
+  transition: background-color 1s, color 1s linear;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+@media screen and (max-width: 576px) {
+  .num {
+    width: 5.875rem;
+    height: 5.875rem;
+    min-width: 5.875rem;
+    min-height: 5.875rem;
+    font-size: 2rem !important;
+  }
+}

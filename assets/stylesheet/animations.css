@@ -1,0 +1,277 @@
+/* swipe */
+@keyframes swipeRightBorder {
+  from {
+    transform: rotate(initial);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes swipeLeftBorder {
+  from {
+    transform: rotate(initial);
+  }
+  to {
+    transform: rotate(280deg);
+  }
+}
+
+/* vidget */
+@keyframes roadmapMain {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes roadmapList {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes roadmapStick {
+  from {
+    transform: scaleY(0) scaleX(100%);
+  }
+  to {
+    transform: scaleY(100%) scaleX(100%);
+  }
+}
+
+@keyframes roadMapText {
+  25% {
+    color: var(--blue);
+  }
+  75% {
+    opacity: 1;
+    color: var(--blue);
+  }
+  to {
+    opacity: 1;
+    color: var(--black);
+  }
+}
+
+@keyframes check {
+  from {
+    top: -100%;
+  }
+  to {
+    top: -9%;
+  }
+}
+
+@keyframes scrollCheck {
+  to {
+    transform: rotate(7deg) translateY(calc(-80% + 8.75rem));
+  }
+}
+
+@keyframes scrollBubs {
+  to {
+    top: 1.875rem;
+  }
+}
+
+/* bub */
+@keyframes moveLeftBub {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveRightBub {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearLeftBub {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes appearRightBub {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveLastBub {
+  0% {
+    transform: translateX(5%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* svg */
+@keyframes drawSign {
+  from {
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 0 200%;
+  }
+  to {
+    stroke-dasharray: 200% 0;
+  }
+}
+
+@keyframes drawArr {
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    stroke-dasharray: 20 0;
+  }
+}
+
+@keyframes drawCircle {
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    stroke-dasharray: 360% 0;
+  }
+}
+
+@keyframes drawUl {
+  from {
+    stroke-dasharray: 0 140%;
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    stroke-dasharray: 140% 0;
+  }
+}
+
+@keyframes unDrawUl {
+  from {
+    stroke-dasharray: 140% 0;
+    opacity: 1;
+  }
+  to {
+    stroke-dasharray: 140% 0;
+    opacity: 0;
+  }
+}
+
+/* fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* rotate */
+@keyframes rotateForward {
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotateBack {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes rotateForwardReversed {
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotateBackReversed {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  @keyframes roadmapMain {
+    from {
+      transform: translateY(50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  
+
+  
+}

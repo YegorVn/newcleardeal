@@ -1,0 +1,24 @@
+.input{
+    background-color: var(--white);
+    border-radius: var(--r-30);
+    border: none;
+    font-size: inherit;
+    padding: 1rem 1.5rem;
+}
+
+.input_wrong{
+    box-shadow: 0px 0px 3px 1px var(--red);
+}
+
+.input_right{
+    box-shadow: 0px 1px 10px var(--blue);
+}
+
+.input:focus{
+    outline: none;
+}
+
+.input::placeholder{
+    color: var(--light-blue);
+    opacity: 0.5;
+}

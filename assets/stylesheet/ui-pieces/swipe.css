@@ -1,0 +1,61 @@
+.swipe {
+  height: 3.375rem;
+  position: relative;
+  width: 3.375rem;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+.swipe__icon,
+.swipe__border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+}
+
+.swipe__border {
+  background-image: url("../../images/border.svg");
+  background-size: 100%;
+  border-radius: 100%;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+}
+
+.swipe_left .swipe__border {
+  transform: rotate(-80deg);
+}
+
+.swipe_right .swipe__border {
+  transform: rotate(-180deg);
+}
+
+.swipe_left_active .swipe__border {
+  animation-name: swipeLeftBorder;
+}
+
+.swipe_right_active .swipe__border {
+  animation-name: swipeRightBorder;
+}
+
+.swipe__icon {
+  background-size: 25%;
+}
+
+.swipe_left .swipe__icon {
+  background-image: url("../../images/arrowLeft.svg");
+  background-position: 42% 47%;
+}
+
+.swipe_right .swipe__icon {
+  background-image: url("../../images/arrowRight.svg");
+  background-position: 54% 47%;
+}
+
+@media screen and (max-width: 576px) {
+}

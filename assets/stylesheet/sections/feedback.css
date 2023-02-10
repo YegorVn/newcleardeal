@@ -1,0 +1,46 @@
+.feedback{
+    margin: 12.5rem 0 0 0;
+}
+
+.feedback__header{
+    display: flex;
+    align-items: center;
+    padding: 0 4.5rem;
+}
+
+.feedback__title{
+    font-weight: var(--bolder);
+    font-size: var(--text-xxxxl);
+}
+
+.feedback__annotation{
+    font-size: var(--text-xxs);
+    margin: 0.5rem 0 0 0;
+}
+
+.feedback__girl{
+    margin: 0 0 0 auto;
+    width: 31.75rem;
+    height: 21.438rem;
+}
+
+@media screen and (max-width: 576px) {
+    .feedback__header{
+        padding: 0;
+        flex-flow: column;
+    }
+
+    .feedback__title{
+        font-size: var(--text-xxl);
+    }
+
+    .feedback__annotation{
+        margin: 1rem 0 0 0;
+    }
+
+    .feedback__girl{
+        margin: 3rem 0 0 0;
+        width: 100%;
+        height: unset;
+    }
+}
