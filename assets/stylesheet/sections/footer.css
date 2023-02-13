@@ -1,8 +1,10 @@
-footer {
+footer{
   display: flex;
   color: var(--white);
   height: 36.25rem;
   background-color: var(--blue);
+  width: 100vw;
+  margin-left: calc(calc(100vw - 100%) / -2);
 }
 
 .footer__content {

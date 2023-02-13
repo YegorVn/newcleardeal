@@ -33,7 +33,7 @@
 .grbg_cards_first{
     width: 65rem;
     height: 65rem;
-    top: 162rem;
+    top: 100rem;
     left: -7rem;
     background: radial-gradient(50% 50% at 50% 50%, #A3CFF4 0%, rgba(217, 217, 217, 0) 100%);
 }
@@ -41,7 +41,7 @@
 .grbg_cards_second{
     width: 72rem;
     height: 72rem;
-    top: 156rem;
+    top: 95rem;
     left: 57rem;
     background: radial-gradient(50% 50% at 50% 50%, #577BFA 0%, rgba(217, 217, 217, 0) 100%);
 }

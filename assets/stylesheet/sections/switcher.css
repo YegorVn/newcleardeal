@@ -122,10 +122,12 @@
 .crossout {
   font-size: var(--text-xxxxs);
   position: relative;
+  width: fit-content;
 }
 
 .check__crossout{
   margin-top: 1.15em;
+  position: relative;
 }
 
 .crossout_no_margin {
@@ -134,10 +136,11 @@
 
 .crossout__svg {
   position: absolute;
-  left: -0.1em;
+  left: 0;
   top: 50%;
   animation: 1s forwards drawUl;
   stroke-dasharray: 0 140%;
+  width: 100%;
 }
 
 .check__barcode {

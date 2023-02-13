@@ -10,10 +10,10 @@
   justify-content: center;
   align-items: center;
   color: var(--blue);
+  transition: background-color 1s, color 1s linear;
 }
 
 .num_in_view{
-  transition: background-color 1s, color 1s linear;
   color: var(--white);
   background-color: var(--blue);
 }

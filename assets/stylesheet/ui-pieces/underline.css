@@ -3,6 +3,7 @@
   width: 100%;
   stroke-dasharray: 0 140%;
   opacity: 0;
+  top: 95%;
 }
 
 .ul_draw {

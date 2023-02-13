@@ -5,6 +5,7 @@
 .slider__body {
   margin: 0 0 0 0;
   display: flex;
+  position: relative;
 }
 
 .slider__vidget {
@@ -15,13 +16,26 @@
   position: relative;
 }
 
-.slider__text {
+.slider__block {
   position: relative;
   width: calc(100% - 4.5rem);
-  margin: 2.5rem 0 0 4.5rem;
+  min-height: 100%;
+  margin: 0 0 0 4.5rem;
 }
 
-.slider__text_fade-in {
+.slider__text{
+  top: 2.5rem;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+.slider__text_active{
+  opacity: 1;
+}
+
+.slider__block_fade-in {
   animation: 0.5s linear forwards fadeIn;
 }
 
@@ -42,7 +56,14 @@
 
 /* SLIDES */
 .slides__slide {
+  border-radius: var(--r-20);
+  background-color: var(--white);
   padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slides__slide_fade_in {
@@ -73,18 +94,6 @@
 
 .slides__slide_fade_in {
   animation: 1s forwards fadeIn;
-}
-
-.slides__left,
-.slides__mid,
-.slides__right {
-  background-color: var(--white);
-  border-radius: var(--r-20);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 @keyframes slideFadeIn {
@@ -145,13 +154,16 @@
     flex-flow: column;
   }
 
-  .slider__vidget {
-    /* flex-basis: 8.75rem; */
+  .slider__block {
+    margin: 0;
+    width: 100%;
+    height: 25rem;
   }
 
-  .slider__text {
-    margin: 2rem 0 0 0;
-    width: 100%;
+  .slider__text{
+    top: 2rem;
+    margin: 0 0 0 0;
+    white-space: inherit;
   }
 
   .slider__title {
@@ -170,11 +182,20 @@
     scroll-snap-type: x mandatory;
     position: relative;
     display: flex;
-    flex-basis: 24rem;
+    flex-basis: 27rem;
   }
 
   .slides__slide {
-    padding: 1.5rem;
+    padding: 1.5rem 1.3rem;
+    opacity: 1;
+    filter: none;
+    position: relative;
+    border-radius: var(--r-20);
+    transform: unset;
+    box-shadow: unset;
+    scroll-snap-align: center;
+    min-width: 100%;
+    margin-left: 5rem;
   }
 
   .slides__header {
@@ -198,17 +219,8 @@
   }
 
   .slides__text {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     font-size: var(--text-xs);
-  }
-
-  .slides__slide {
-    margin-left: 5rem;
-    min-width: 100%;
-    scroll-snap-align: center;
-    position: relative;
-    transform: unset;
-    box-shadow: unset;
   }
 
   .slides::-webkit-scrollbar {

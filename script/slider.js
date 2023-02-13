@@ -1,46 +1,33 @@
 const sliderContent = [
   {
     name: "Любовь",
-    img: "",
+    img: "../assets/images/avLubov.png",
     city: "Кемерово",
     text: "Продали мою квартиру быстро, грамотно, да ещё и покупателю помогли оформить ипотеку. Лёгкий, понятный и приятный процесс. Если буду ещё связываться с недвижимостью, то только в сопровождении Ясной сделки",
-    title:
-      "Узаконили перепланировку и продали квартиру на 300 000 ₽ выше, чем планировали",
-    annotation:
-      "Чтобы квартиру можно было купить в ипотеку, разобрались с неузаконенной перепланировкой. Это же позволило продать квартиру дороже. Клиенты оценили современный уровень сделки: без МФЦ и очередей — с электронной регистрацией и поступлением денег на следующий день",
   },
   {
     name: "Надежда",
-    img: "",
+    img: "../assets/images/avNadezda.png",
     city: "Москва",
     text: "Ипотека для нас тёмный лес, думали не разберёмся. В итоге быстро и понятно получили ответы на все вопросы и одобренную ставку! ",
-    title: "Одобрили ипотеку без справки от работодателя за 2 минуты",
-    annotation:
-      "Несмотря на то, что Надежда находится в отпуске по уходу за ребёнком, а работодатель мужа отказался подтвердить доход справками, мы смогли быстро одобрить ипотек на вторичное жильё под 9,5%",
   },
   {
     name: "Анастасия",
-    img: "",
+    img: "../assets/images/avAnastasia.png",
     city: "Кемерово",
     text: "С Ясной сделкой продали квартиру чётко, быстро и по хорошей цене. Спокойствие команды передавалось и нам, мы точно знали, что проблем не будет. Всем рекомендую!",
-    title: "Продали наследственную квартиру без спешки по максимальной цене",
-    annotation:
-      "Анастасия получила в наследство квартиру в советском доме 1980 года. Старый ремонт отпугивал некоторых покупателей, но мы не торопились и через 4 месяца продали квартиру за 7 800 000 ₽",
   },
   {
     name: "Оксана",
-    img: "",
+    img: "../assets/images/avOxana.png",
     city: "Мытищи",
     text: "Я человек старой закалки и была против всяких сделок онлайн. Благодаря агентству рефинансирование нашей ипотеки прошло просто супер!",
-    title: "Рефинансировали ипотеку Оксаны и сэкономили ей 1 000 000 ₽",
-    annotation:
-      "Смогли учесть неофициальную подработку при анализе платёжеспособности и рефинансировали ипотеку на вторичку: сократили срок выплаты, снизили ставку и переплату, сохранили комфортный ежемесячный платёж.",
   },
 ];
 
 const slideHtml = `
 <div class="slides__header">
-  <img class="slides__av" />
+  <img src="" alt="" class="slides__av" />
   <div class="slides__title">
     <div class="slides__name"></div>
     <div class="slides__city"></div>
@@ -48,7 +35,7 @@ const slideHtml = `
 </div>
 <div class="slides__body">
   <div class="slides__text"></div>
-</div>`
+</div>`;
 
 const slider = document.querySelector(".slider");
 
@@ -59,25 +46,43 @@ let mid = slider.querySelector(".slides__mid");
 let left = slider.querySelector(".slides__left");
 let right = slider.querySelector(".slides__right");
 let slides = slider.querySelector(".slider__vidget");
+let sliderTexts = slider.querySelectorAll(".slider__text");
 
-const handleContent = (dir) => {
+const handleIdx = (idx, dir, maxIdx) => {
+  const res = idx + dir;
+  if (res > maxIdx) return 0;
+  else if (res < 0) return maxIdx;
+  else return res;
+};
+
+const handleIdxOnScroll = (el, idx) => {
+  const numOfEls = el.children.length;
+  const containerWidth = el.scrollWidth - el.clientWidth;
+  const elWidth = containerWidth / numOfEls;
+  const offset = el.scrollLeft;
+  const res = Math.floor(offset / elWidth);
+  if (res !== idx && res < numOfEls) return res;
+  else return idx;
+};
+
+const handleText = (idx, sliderTexts) => {
+  sliderTexts.forEach((text) => {
+    text.classList.remove("slider__text_active");
+  });
+  sliderTexts[idx].classList.add("slider__text_active");
+};
+
+const slideDataToHtml = (ref, data) => {
+  ref.querySelector(".slides__name").innerHTML = data.name;
+  ref.querySelector(".slides__city").innerHTML = data.city;
+  ref.querySelector(".slides__text").innerHTML = data.text;
+  ref.querySelector(".slides__av").src = data.img;
+};
+
+const handleContent = () => {
   let mid = slider.querySelector(".slides__mid");
   let left = slider.querySelector(".slides__left");
   let right = slider.querySelector(".slides__right");
-  const handleIdx = (idx, dir, maxIdx) => {
-    const res = idx + dir;
-    if (res > maxIdx) return 0;
-    else if (res < 0) return maxIdx;
-    else return res;
-  };
-
-  const slideDataToHtml = (ref, data) => {
-    ref.querySelector(".slides__name").innerHTML = data.name;
-    ref.querySelector(".slides__city").innerHTML = data.city;
-    ref.querySelector(".slides__text").innerHTML = data.text;
-  };
-
-  currentIdx = handleIdx(currentIdx, dir, maxIdx);
 
   let leftData;
   let midData;
@@ -103,13 +108,10 @@ const handleContent = (dir) => {
       break;
     }
   }
-  // console.log(currentIdx, leftData, midData, rightData)
   slideDataToHtml(left, leftData);
   slideDataToHtml(mid, midData);
   slideDataToHtml(right, rightData);
 };
-
-handleContent(0);
 
 const handleRightSwipe = () => {
   let mid = slider.querySelector(".slides__mid");
@@ -121,6 +123,9 @@ const handleRightSwipe = () => {
   right.style.zIndex = 1;
   mid.classList.add("slides__mid_slide_right");
   left.classList.add("slides__left_slide");
+
+  currentIdx = handleIdx(currentIdx, -1, maxIdx);
+  handleText(currentIdx, sliderTexts);
 
   const handleMid = () => {
     mid.removeEventListener("transitionend", handleMid);
@@ -157,6 +162,9 @@ const handleLeftSwipe = () => {
   mid.classList.add("slides__mid_slide_left");
   right.classList.add("slides__right_slide");
 
+  currentIdx = handleIdx(currentIdx, 1, maxIdx);
+  handleText(currentIdx, sliderTexts);
+
   const handleMid = () => {
     mid.removeEventListener("transitionend", handleMid);
     mid.remove();
@@ -164,11 +172,11 @@ const handleLeftSwipe = () => {
     newRight.classList.add("slides__right", "slides__slide");
     newRight.innerHTML = slideHtml;
     slides.appendChild(newRight);
-    handleContent(1)
+    handleContent(1);
   };
 
   const handleRight = () => {
-    const rightContent = right.innerHTML
+    const rightContent = right.innerHTML;
     right.removeEventListener("transitionend", handleRight);
     right.remove();
     const newMid = document.createElement("div");
@@ -181,11 +189,54 @@ const handleLeftSwipe = () => {
   right.addEventListener("transitionend", handleRight, false);
 };
 
-slider
-  .querySelector(".swipe_right")
-  .addEventListener("click", handleRightSwipe);
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    if (window.innerWidth > 576) {
+      handleText(currentIdx, sliderTexts);
+      handleContent(currentIdx);
+      slider
+        .querySelector(".swipe_right")
+        .addEventListener("click", handleRightSwipe);
 
-slider.querySelector(".swipe_left").addEventListener("click", handleLeftSwipe);
+      slider
+        .querySelector(".swipe_left")
+        .addEventListener("click", handleLeftSwipe);
+    }
+    if (window.innerWidth < 576) {
+      let timeIdx = currentIdx;
+      const slides = slider.querySelector(".slides");
+
+      slides.innerHTML = "";
+
+      sliderContent.forEach((data) => {
+        let slide = document.createElement("div");
+        slide.innerHTML = slideHtml;
+        slide.classList.add("slides__slide");
+        slideDataToHtml(slide, data);
+        slides.appendChild(slide);
+      });
+
+      handleText(currentIdx, sliderTexts);
+
+      slides.addEventListener("scroll", (e) => {
+        timeIdx = handleIdxOnScroll(slides, timeIdx);
+        if (timeIdx !== currentIdx) {
+          currentIdx = timeIdx;
+          handleText(currentIdx, sliderTexts);
+          document
+            .querySelector(".pag_slider")
+            .querySelectorAll(".pag__c")
+            .forEach((c, i) => {
+              c.classList.remove("pag__c_active");
+              if (i === currentIdx) c.classList.add("pag__c_active");
+            });
+        }
+      });
+    }
+  },
+  false
+);
 
 let swipeBtnsDisabled = false;
 const swipeBtns = slider.querySelectorAll(".swipe");
@@ -204,4 +255,19 @@ swipeBtns.forEach((btn) => {
     btn.classList.remove("swipe_left_active");
     btn.classList.remove("swipe_right_active");
   });
+});
+
+cards.addEventListener("scroll", () => {
+  let timeIdx = cardsIdx;
+  timeIdx = handleIdxOnScroll(cards, cardsIdx);
+  if (timeIdx !== cardsIdx) {
+    cardsIdx = timeIdx;
+    document
+      .querySelector(".pag_cards")
+      .querySelectorAll(".pag__c")
+      .forEach((c, i) => {
+        c.classList.remove("pag__c_active");
+        if (i === cardsIdx) c.classList.add("pag__c_active");
+      });
+  }
 });

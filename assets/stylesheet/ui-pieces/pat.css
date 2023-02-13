@@ -33,7 +33,6 @@
   width: 100%;
   height: 100%;
   background-position: center;
-  background-size: 50%;
 }
 
 .pat__icon_open {
@@ -41,6 +40,7 @@
   background-image: url("../../images/arrowDown.svg");
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  background-size: 50%;
 }
 
 .pat__icon_open_active {
@@ -52,6 +52,10 @@
 }
 
 .pat__icon_close {
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-image: url("../../images/cross.svg");
+  background-size: 40%;
 }
 
 @media screen and (max-width: 576px) {

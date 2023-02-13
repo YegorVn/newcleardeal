@@ -167,7 +167,18 @@
   }
 
   .bub_b .bub__text {
+    padding: 1.96rem 1.898rem 1.983rem 1.869rem;
+    width: fit-content;
+    text-align: left;
     font-size: var(--text-xxxs);
+  }
+
+  .bub_b_left .bub__text {
+    margin-left: 0.6rem;
+  }
+
+  .bub_b_right .bub__text {
+    margin-right: 0.6rem;
   }
 
   /* text: bub_s_left bub_s_right */

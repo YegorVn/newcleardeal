@@ -73,7 +73,7 @@
 @media screen and (max-width: 576px) {
   .switch {
     padding: 0;
-    border: none;
+    border: 2px solid var(--blue);
     border-radius: 1.875rem;
     flex-basis: 2.5rem;
     height: 2.5rem;
@@ -81,16 +81,33 @@
   }
 
   .switch_inactive {
-    border: 2px solid var(--blue);
     color: var(--blue);
     background: transparent;
     opacity: 1;
   }
 
-  .switch_active {
-    flex-grow: 0.9;
+  @keyframes switchFill {
+    75%{
+      color: var(--white);
+    }
+    to {
+      background-position: left;
+      color: var(--white);
+    }
   }
 
+  .switch_active {
+    background: transparent;
+    flex-grow: 0.9;
+    background: linear-gradient(to left, transparent 50%, var(--blue) 50%) right;
+    background-size: 200%;
+    animation-name: switchFill;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    color: var(--blue);
+  }
   .switch__svg {
     display: none;
   }
